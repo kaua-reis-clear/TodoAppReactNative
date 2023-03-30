@@ -8,11 +8,12 @@ const style = StyleSheet.create({
         padding: 10,
         borderBottomWidth: 1,
         borderTopWidth: 1,
-        borderColor: '#FFF'
+        borderColor: '#F2E9E4'
     },
     desc: {
         color: '#FFF',
-        fontSize: 17
+        fontSize: 17,
+        fontWeight: 'bold'
     },
     buttons: {
         flexDirection: 'row'
