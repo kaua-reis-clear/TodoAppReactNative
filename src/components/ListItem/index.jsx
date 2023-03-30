@@ -7,7 +7,7 @@ import { BASE_URL } from '../../constants';
 import { TodoContext } from '../context/TodoContext';
 
 export function ListItem({ todo }) {
-  const { getTodos } = useContext(TodoContext)
+  const { getTodos, setCurrentId, setDesc } = useContext(TodoContext)
 
   function toggleTodo() {
     axios.put(`${BASE_URL}done/${todo.id}`, { done: todo.done }).then(() => getTodos())
@@ -15,6 +15,11 @@ export function ListItem({ todo }) {
 
   function deleteTodo() {
     axios.delete(`${BASE_URL}${todo.id}`).then(() => getTodos())
+  }
+
+  function updateDescription() {
+    setCurrentId(todo.id);
+    setDesc(todo.desc)
   }
 
   return (
@@ -28,7 +33,7 @@ export function ListItem({ todo }) {
             <AntDesign name="check" size={24} color="white" />
           )}
         </TouchableOpacity>
-        <TouchableOpacity style={style.button(null, 'edit')}>
+        <TouchableOpacity style={style.button(null, 'edit')} onPress={() => updateDescription()}>
           <AntDesign name="edit" size={24} color="white" />
         </TouchableOpacity>
         <TouchableOpacity style={style.button(null, 'del')} onPress={() => deleteTodo()}>

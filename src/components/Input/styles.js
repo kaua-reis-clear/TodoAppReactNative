@@ -1,17 +1,19 @@
-import { StyleSheet, Dimensions } from "react-native";
+import { StyleSheet, Dimensions } from 'react-native';
 
 const style = StyleSheet.create({
-    inputArea: {
-
-    },
-    input: {
-        backgroundColor: '#F2E9E4',
-        fontSize: 17,
-        width: (Dimensions.get('window').width - 20),
-        borderRadius: 10,
-        padding: 10,
-        marginBottom: 10
-    }
+  inputArea: {
+    backgroundColor: '#F2E9E4',
+    flexDirection: 'row',
+    width: Dimensions.get('window').width - 20,
+    borderRadius: 10,
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    marginBottom: 10,
+    padding: 10,
+  },
+  input: {
+    fontSize: 17,
+  },
 });
 
-export default style
+export default style;
