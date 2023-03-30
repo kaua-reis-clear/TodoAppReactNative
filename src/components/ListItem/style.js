@@ -11,11 +11,12 @@ const style = StyleSheet.create({
         borderColor: '#F2E9E4',
         alignItems: 'center'
     },
-    desc: {
-        color: '#FFF',
+    desc: done => ({
+        color: done ? '#AAA' : '#FFF',
         fontSize: 17,
         fontWeight: 'bold',
-    },
+        textDecorationLine: done ? 'line-through' : 'none'
+    }),
     buttons: {
         flexDirection: 'row'
     },

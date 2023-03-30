@@ -24,7 +24,7 @@ export function ListItem({ todo }) {
 
   return (
     <View style={style.row}>
-      <Text style={style.desc}>{todo.desc}</Text>
+      <Text style={style.desc(todo.done)}>{todo.desc}</Text>
       <View style={style.buttons}>
         <TouchableOpacity style={style.button(todo.done, 'done')} onPress={() => toggleTodo()}>
           {todo.done ? (

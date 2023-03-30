@@ -13,6 +13,13 @@ const style = StyleSheet.create({
   },
   input: {
     fontSize: 17,
+    padding: 5
+  },
+  cancelButton: {
+    backgroundColor: '#191D32',
+    borderRadius: 5,
+    padding: 4,
+    marginHorizontal: 5,
   },
 });
 
