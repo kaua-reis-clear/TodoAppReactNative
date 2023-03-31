@@ -8,14 +8,8 @@ import axios from 'axios';
 import { AntDesign } from '@expo/vector-icons';
 
 export default function Input() {
-  const { desc, setDesc, currentId, setCurrentId, getTodos } =
+  const { desc, setDesc, currentId, setCurrentId, getTodos, refInput } =
     useContext(TodoContext);
-
-  const refInput = useRef(null);
-
-  if(currentId) {
-    refInput.current.focus()
-  }
 
   function submitTodo() {
     axios[currentId === '' ? 'post' : 'put'](`${BASE_URL}${currentId}`, {

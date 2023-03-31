@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { createContext, useContext, useState } from 'react';
+import { createContext, useContext, useState, useRef } from 'react';
 import { BASE_URL } from '../../constants';
 
 export const TodoContext = createContext();
@@ -8,6 +8,7 @@ export function TodoProvider({ children }) {
   const [todos, setTodos] = useState([]);
   const [desc, setDesc] = useState('');
   const [currentId, setCurrentId] = useState('');
+  const refInput = useRef(null);
 
   function getTodos() {
     return new Promise((resolve, reject) => {
@@ -24,7 +25,8 @@ export function TodoProvider({ children }) {
     desc,
     setDesc,
     currentId,
-    setCurrentId
+    setCurrentId,
+    refInput
   };
 
   return <TodoContext.Provider value={value}>{children}</TodoContext.Provider>;

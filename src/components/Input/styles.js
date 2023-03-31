@@ -13,7 +13,8 @@ const style = StyleSheet.create({
   },
   input: {
     fontSize: 17,
-    padding: 5
+    padding: 5,
+    flex: 1
   },
   cancelButton: {
     backgroundColor: '#191D32',

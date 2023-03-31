@@ -7,7 +7,7 @@ import { BASE_URL } from '../../constants';
 import { TodoContext } from '../context/TodoContext';
 
 export function ListItem({ todo }) {
-  const { getTodos, setCurrentId, setDesc } = useContext(TodoContext)
+  const { getTodos, setCurrentId, setDesc, refInput } = useContext(TodoContext)
 
   function toggleTodo() {
     axios.put(`${BASE_URL}done/${todo.id}`, { done: todo.done }).then(() => getTodos())
@@ -19,7 +19,8 @@ export function ListItem({ todo }) {
 
   function updateDescription() {
     setCurrentId(todo.id);
-    setDesc(todo.desc)
+    setDesc(todo.desc);
+    refInput.current.focus()
   }
 
   return (
